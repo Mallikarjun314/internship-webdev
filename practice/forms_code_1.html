@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 10px;
+        margin: 20px;
+
+        border: 2px solid black;
+
+        border-radius: 15px;
+
+        background-color: aqua;
+      }
+
+      input {
+        background-color: gray;
+      }
+
+      input:hover {
+        background-color: red;
+      }
+      
+      input:focus {
+        background-color: lime;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>This is a form</h1>
+      <input type="text" placeholder="Text" />
+      <input type="number" placeholder="Number" />
+      <input type="email" placeholder="Email" />
+      <input type="url" placeholder="URL" />
+      <input type="tel" placeholder="Tel" />
+
+      <textarea placeholder="Textarea"></textarea>
+      <select>
+        <option>Abc</option>
+        <option>Xyz</option>
+        <option>1234</option>
+        <option>kjhg</option>
+      </select>
+      <br />
+      <br />
+      <br />
+      <input type="reset" value="Reset" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
