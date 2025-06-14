@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Specification Panel with Dropdowns</title>
+        <style>
+            body {
+                background-color: #111;
+                color: #f4c542;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                width: 90%;
+                max-width: 1000px;
+            }
+
+            .box {
+                background-color: #f4c542;
+                color: #000;
+                padding: 15px 20px;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                position: relative;
+                transition: background 0.3s;
+            }
+
+            .box:hover {
+                background-color: #e0b836;
+            }
+
+            .box::after {
+                content: "▼";
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+                transition: transform 0.3s;
+            }
+
+            .box.active::after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+
+            .dropdown-content {
+                background-color: #222;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 0 0 6px 6px;
+                display: none;
+                font-weight: normal;
+            }
+
+            .dropdown-content.active {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SPECIFICATION</h1>
+        <div class="container">
+            <!-- Example block with dropdown -->
+            <div>
+                <div class="box">STRUCTURE</div>
+                <div class="dropdown-content">
+                    Super Structure: RCC" Shear Wall Structure System", designed
+                    to withstand wind and seismic loads as per relevant IS
+                    Codes.<br />
+                    RCC Non Structural Walls/Block Masonry as per design.<br />
+                    <b>Floor Height:</b> 3.60M (from FFL to FFL).
+                </div>
+            </div>
+
+            <div>
+                <div class="box">BALCONY & SITOUTS</div>
+                <div class="dropdown-content">
+                    Floor: Vitrified Tiles of Matte Finish as per design.<br />
+                    <b>Wall/Ceiling:</b> Exterior grade paint as per
+                    Elevation.<br />
+                    <b>Railing:</b> Laminated Glass Railing designed as per
+                    relevant IS codes.
+                </div>
+            </div>
+
+            <div>
+                <div class="box">UTILITY</div>
+                <div class="dropdown-content">
+                    Floor: Matte finish Vitrified Tile Flooring as per
+                    Design.<br />
+                    <b>Walls:</b> Wall Cladding up to 3' height with glazed
+                    tiles and exterior grade paint above.<br />
+                    <b>Plumbing:</b> Provision for Dish Washer, Washing
+                    Machine/Dryer.<br />
+                    <b>Appliances:</b> Electrical Sockets for Dish washer,
+                    Washing Machine/ Dryer.
+                </div>
+            </div>
+
+            <div>
+                <div class="box">JOINERY</div>
+                <div class="dropdown-content">
+                    Internal Doors: 9'0" height Factory made Solid/ Engineered
+                    wood frame and flush door shutter with Veneer on both sides
+                    finished with PU coat.<br />
+                    Toilet Doors: 9'0" height Factory made Solid/ Engineered
+                    wood frame and flush door shutter with Veneer on both sides
+                    finished with PU coat.<br />
+
+                    Sitout /Balcony Doors: 9'0" height Reinforced Aluminium
+                    Glazed Sliding Doors with performance glass and hurricane
+                    bar designed as per relevant IS code with premium hardware
+                    with insect screen provision.<br />
+
+                    Utility Door: 9'0" height Factory made Solid/ Engineered
+                    wood frame and flush door shutter with Laminate on both
+                    sides as per design.<br />
+                </div>
+            </div>
+
+            <div>
+                <div class="box">OTHER BEDROOMS</div>
+                <div class="dropdown-content">
+                    Floor: Imported Marble Flooring/Skirting as per Design.<br />
+
+                    Walls: Gypsum Punning + 2 Coats putty + Acrylic Primer + 2
+                    Coats of Luxury Acrylic Emulsion Paint of low VOC<br />
+                    Ceiling:Single Coat Putty + one coat Primer+ 2 Coats of
+                    Luxury Acrylic Emulsion of low VOC.
+                </div>
+            </div>
+
+            <div>
+                <div class="box">
+                    MEP PROVISIONS & AMENITIES (SITE / COMMON AREAS)
+                </div>
+                <div class="dropdown-content">
+                    Water Softener: Central Water Softener Plant.<br />
+
+                    Solid Waste Management: Garbage Chutes are provided at every
+                    floor level, centrally collected and disposed as per local
+                    body norms.<br />
+
+                    Car Wash: Car Wash facility is provided in basement.<br />
+
+                    Billing System: Automated Billing System for Water, Power
+                    & LPG/CNG Supply.
+                </div>
+            </div>
+
+            <div>
+                <div class="box">MASTER BEDROOM & CLOSET</div>
+                <div class="dropdown-content">
+                    Floor: Imported Marble Flooring/Skirting as per Design.<br />
+
+                    Walls: Gypsum Punning + 2 Coats putty + Acrylic Primer + 2
+                    Coats of Luxury Acrylic Emulsion Paint of low VOC<br />
+
+                    Ceiling: Singe Coat Putty + 1 coat Primer+ 2 Coats of Luxury
+                    Acrylic Emulsion of low VOC
+                </div>
+            </div>
+
+            <div>
+                <div class="box">POWDER ROOM</div>
+                <div class="dropdown-content">
+                    Floor: Premium vitrified tiles of reputed make as per design
+                    intent.<br />
+
+                    Walls: Premium vitrified tiles of reputed make Dado as per
+                    design intent.<br />
+
+                    Ceiling: Gypsum / Calcium Silicate Board MR Grade with grid
+                    ceiling as per Design.
+                </div>
+            </div>
+
+            <div>
+                <div class="box">
+                    DRAWING / LIVING / DINING / TV LOUNGE / POOJA
+                </div>
+                <div class="dropdown-content">
+                    Floor:Imported Marble Flooring/Skirting as per Design.<br />
+
+                    Walls: Gypsum Punning + 2 Coats putty + one coat Primer + 2
+                    Coats of Luxury Acrylic Emulsion Paint of low VOC<br />
+
+                    Ceiling: Singe Coat Putty + 1 coat Primer+ 2 Coats of Luxury
+                    Acrylic Emulsion of low VOC
+                </div>
+            </div>
+
+            <div>
+                <div class="box">MASTER TOILET</div>
+                <div class="dropdown-content">
+                    Floor: Combination of marble & premium tiles or premium
+                    tiles of reputed make as per design intent.<br />
+
+                    Wall: Combination of marble & premium tiles or premium tiles
+                    of reputed make upto 9'-0" high as per design intent.<br />
+
+                    Ceiling: Gypsum / Calcium Silicate Board MR Grade with grid
+                    ceiling as per Design.
+                </div>
+            </div>
+
+            <div>
+                <div class="box">DRY KITCHEN</div>
+                <div class="dropdown-content">
+                    Designed to accommodate modular kitchen with all necessary
+                    services provisions.<br />
+
+                    Note: Kitchen platform, Dado, Sink, Faucets & other
+                    accessories are not provided by Builder/Developer and are in
+                    purchaser's scope.<br />
+
+                    Floor: Imported Marble Flooring & Skirting as per Design.<br />
+
+                    Walls: Gypsum Punning + 2 Coats putty + one coat Primer + 2
+                    Coats of Luxury Acrylic Emulsion Paint of low VOC.<br />
+
+                    Ceiling: Single Coat Putty + one coat Primer+ 2 Coats of
+                    Luxury Acrylic Emulsion of low VOC.<br />
+
+                    Plumbing: Provision for Sink, Faucet and water purifier
+                    point as per design<br />
+
+                    Exhaust: Provision for chimney exhaust.<br />
+
+                    Appliances: Provision of Electrical Sockets for Hob/
+                    Chimney, Refrigerator, Micro Oven , Mixer and
+                    additional two points
+                </div>
+            </div>
+
+            <div>
+                <div class="box">BEDROOMS TOILET</div>
+                <div class="dropdown-content">
+                    Floor: Premium Tiles of reputed make as per design
+                    intent.<br />
+
+                    Wall: Premium vitrified Tiles of reputed make Dado up to
+                    9'-0" as per design.<br />
+
+                    Ceiling: Gypsum / Calcium Silicate Board MR Grade with grid
+                    ceiling as per design.
+                </div>
+            </div>
+
+            <div>
+                <div class="box">WET KITCHEN</div>
+                <div class="dropdown-content">
+                    Designed to accommodate modular kitchen with all necessary
+                    services provisions.<br />
+
+                    Note: Kitchen platform, Dado, Sink, Faucets & other
+                    accessories are not provided by Builder/Developer and are in
+                    purchaser's scope.<br />
+
+                    Floor: Vitrified Tile Flooring as per Design.<br />
+
+                    Walls: Gypsum Punning + 2 Coats putty + one coat Primer + 2
+                    Coats of Luxury Acrylic Emulsion Paint of low VOC.<br />
+
+                    Ceiling: Single Coat Putty + one coat Primer+ 2 Coats of
+                    Luxury Acrylic Emulsion of low VOC.<br />
+
+                    Plumbing: Provision for Sink, Faucet and water purifier
+                    point as per design.<br />
+
+                    Exhaust: Provision for chimney exhaust.<br />
+
+                    Appliances: Provision of Electrical Sockets for Hob,
+                    Chimney, Refrigerator, Micro Oven, Mixer, RO and
+                    additional two points.
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const boxes = document.querySelectorAll(".box");
+
+            boxes.forEach((box) => {
+                box.addEventListener("click", () => {
+                    const content = box.nextElementSibling;
+                    box.classList.toggle("active");
+                    content.classList.toggle("active");
+                });
+            });
+        </script>
+    </body>
+</html>

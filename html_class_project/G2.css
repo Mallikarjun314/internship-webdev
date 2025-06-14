@@ -1,0 +1,415 @@
+.g2body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.g2body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.g2body header {
+    background-color: #1c1c1c;
+    color: white;
+    padding-bottom: 1rem;
+}
+
+.g2body .notification-bar {
+    background-color: #e31837;
+    color: white;
+    padding: 8px 0;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.g2body .scroller {
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.g2body h1 {
+    text-align: center;
+    padding: 1rem;
+    font-size: 2.5rem;
+}
+
+.g2body main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.g2body .team-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.g2body .stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.g2body .stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.g2body .stat-card h3 {
+    color: #e31837;
+    margin-bottom: 0.5rem;
+}
+
+.g2body .stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.g2body .latest-news {
+    margin-top: 2rem;
+}
+
+.g2body #news-container {
+    margin-top: 1rem;
+}
+
+.g2body .news-item {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.g2body .news-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.g2body h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e31837;
+}
+
+/* Image Gallery Styles */
+.g2body .image-gallery {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.g2body .gallery-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    width: 100%;
+}
+
+.g2body .gallery-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+.g2body .gallery-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #1c1c1c, #2a2a2a, #1c1c1c);
+    position: relative;
+}
+
+.g2body .gallery-track::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(227, 24, 55, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.g2body .gallery-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex: 0 0 100%;
+    padding: 20px;
+}
+
+.g2body .gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.g2body .gallery-btn:hover {
+    background: rgba(227, 24, 55, 0.8);
+}
+
+.g2body .prev-btn {
+    left: 20px;
+}
+
+.g2body .next-btn {
+    right: 20px;
+}
+
+.g2body .gallery-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.g2body .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.g2body .dot.active {
+    background: #e31837;
+}
+
+/* Modal styles */
+.g2body .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.g2body .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.g2body .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+}
+
+.g2body .close:hover {
+    color: #000;
+}
+
+.g2body .modal-content h2 {
+    color: #e31837;
+    margin-bottom: 1rem;
+}
+
+.g2body .modal-content ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.g2body .modal-content li {
+    margin-bottom: 8px;
+}
+
+.g2body footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #1c1c1c;
+    color: white;
+    margin-top: 2rem;
+}
+
+.g2body .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.g2body .footer-buttons {
+    margin-bottom: 1rem;
+}
+
+.g2body .footer-buttons button {
+    background-color: #e31837;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.g2body .footer-buttons button:hover {
+    background-color: #b31329;
+}
+
+.g2body .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.g2body .team-logo {
+    height: 80px;
+    width: auto;
+}
+
+/* Team Roster Styles */
+.g2body .players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.g2body .player-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    padding: 2rem 1rem;
+    border: 1px solid #e3183722;
+}
+
+.g2body .player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-color: #e31837;
+}
+
+.g2body .player-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #e31837;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.g2body .player-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.g2body .player-name {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.g2body .player-role {
+    color: #e31837;
+    font-size: 0.9rem;
+}
+
+/* Match Schedule Styles */
+.g2body .schedule-container {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.g2body .match-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+
+.g2body .match-card:hover {
+    transform: translateX(10px);
+}
+
+.g2body .match-info {
+    flex-grow: 1;
+}
+
+.g2body .match-date {
+    color: #e31837;
+    font-weight: bold;
+}
+
+.g2body .match-teams {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.g2body .match-venue {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Social Links */
+.g2body .social-links {
+    margin-bottom: 1rem;
+}
+
+.g2body .social-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+.g2body .social-link:hover {
+    color: #e31837;
+}

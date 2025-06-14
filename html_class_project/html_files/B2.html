@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE CROWN OF NEOPOLIS</title>
+    <style>
+            
+        :root {
+            --primary-color: black;
+            --secondary-color: #555;
+            --highlight-color: rgb(171, 147, 12);
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--highlight-color);
+            margin: 20px auto;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--highlight-color);
+        }
+        
+        .stat-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover .stat-value {
+            color: var(--highlight-color);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+            
+            .stat-value {
+                font-size: 2.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>THE CROWN OF NEOPOLIS</h1>
+        </header>
+        
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats will be populated by JavaScript -->
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 THE CROWN OF NEOPOLIS. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stats data
+            const statsData = [
+                { value: "7.7 ACRES", label: "72% OPEN SPACE", link: "https://cdn4.iconfinder.com/data/icons/real-estate-69/64/house-location-map-pin-direction-512.png"},
+                { value: "5", label: "TOWERS", link: "https://img.freepik.com/premium-vector/vector-illustration-stair-isolated-black-icon-wooden-metal-staircase-white-background_209910-535.jpg?semt=ais_hybrid&w=740" },
+                { value: "50", label: "FLOORS", link:"https://www.shutterstock.com/image-vector/simple-black-white-icon-depicting-600nw-2490145533.jpg"},
+                { value: "12 feet", label: "FLOOR HEIGHT",link:"https://www.shutterstock.com/image-vector/editable-room-height-vector-icon-600nw-2344348547.jpg"},
+                { value: "5735 - 7790 SFT", label: "UNIT SIZES",link:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAT38WTltuy6BUq9mFEup5OwMDcusAlEetOg&s"},
+                { value: "4BHK", label: "ULTRA-LUXURY APARTMENTS",link:"https://as1.ftcdn.net/jpg/01/21/31/60/1000_F_121316068_q1JNLQ3PqMhogvveHgjpH3lnABDQRTa7.jpg"},
+                { value: "60,000 SFT", label: "CLUB HOUSE",link:"https://cdn-icons-png.flaticon.com/512/5950/5950185.png" }
+            ];
+            
+            const statsGrid = document.getElementById('statsGrid');
+
+            // Create stat cards
+            statsData.forEach(stat => {
+                const card = document.createElement('div');
+                card.className = 'stat-card';
+                
+                let html = `
+                <img src="${stat.link}" style="height:100px; width:100px;" alt="${stat.label}" />
+                    <div class="stat-value">${stat.value}</div>
+                    <div class="stat-label">${stat.label}</div>
+                `;
+        
+                if (stat.sublabel) {
+                    html += `<div class="stat-label">${stat.sublabel}</div>`;
+                }
+                
+                card.innerHTML = html;
+                statsGrid.appendChild(card);
+            });
+            
+            // Animation effect
+            const cards = document.querySelectorAll('.stat-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Hover effect enhancement
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.03)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

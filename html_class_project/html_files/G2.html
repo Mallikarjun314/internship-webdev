@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Challengers Bengaluru - Team Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>    
+    <header>
+        <div class="notification-bar">
+            <div class="scroller">
+                <span id="notification-text">Loading updates...</span>
+            </div>
+        </div>        <div class="header-content">
+            <h1>Royal Challengers Bengaluru</h1>
+        </div>
+    </header>
+
+    <!-- Image Gallery Section -->
+    <section class="image-gallery">
+        <div class="gallery-container">
+            <div class="gallery-track">
+                <!-- Images will be added here via JavaScript -->
+            </div>
+            <button class="gallery-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="gallery-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <div class="gallery-dots">
+                <!-- Dots will be added here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Modal -->
+    <div id="visionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('vision')">&times;</span>
+            <h2>Our Vision</h2>
+            <p>To be the most successful and admired cricket franchise in the world, inspiring generations through excellence, innovation, and sportsmanship.</p>
+        </div>
+    </div>
+
+    <!-- Mission Modal -->
+    <div id="missionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('mission')">&times;</span>
+            <h2>Our Mission</h2>
+            <p>To create a world-class cricket team that:
+                <ul>
+                    <li>Delivers exceptional performance on the field</li>
+                    <li>Nurtures young talent and develops future champions</li>
+                    <li>Provides an unforgettable experience for our fans</li>
+                    <li>Contributes positively to our community</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <main>
+        <section class="team-info">
+            <h2>Team Overview</h2>
+            <div class="team-stats">
+                <div class="stat-card">
+                    <h3>Championships</h3>
+                    <p>1</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Founded</h3>
+                    <p>2008</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Home Ground</h3>
+                    <p>M. Chinnaswamy Stadium</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="match-schedule">
+            <h2>Upcoming Matches</h2>
+            <div class="schedule-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="team-roster">
+            <h2>Team Players</h2>
+            <div class="players-grid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <h2>Latest Updates</h2>
+            <div id="news-container">
+                <!-- News items will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://twitter.com/RCBTweets" target="_blank" class="social-link">Twitter</a>
+                <a href="https://www.instagram.com/royalchallengersbangalore" target="_blank" class="social-link">Instagram</a>
+                <a href="https://www.facebook.com/RCBTweets" target="_blank" class="social-link">Facebook</a>
+            </div>
+            <div class="footer-buttons">
+                <button onclick="openModal('vision')">Our Vision</button>
+                <button onclick="openModal('mission')">Our Mission</button>
+            </div>
+            <p>&copy; 2025 Royal Challengers Bengaluru. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
